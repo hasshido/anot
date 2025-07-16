@@ -1,6 +1,0 @@
-cloudways.com
-test1.customer.cloudways.com
-test2.customer.cloudways.com
-api.cloudways.com
-www.cloudways.com
-css-tricks.com
