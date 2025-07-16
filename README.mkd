@@ -1,0 +1,57 @@
+# anot
+
+Complementary tool to https://github.com/tomnomnom/anew. Removes lines from a file according to the stdin and removes duplicates.
+
+Intended usage: Removing scope from bug bounty assets txt files.
+
+Example: 
+```
+~# cat scope.txt
+
+cloudways.com
+test1.customer.cloudways.com
+test2.customer.cloudways.com
+api.cloudways.com
+www.cloudways.com
+css-tricks.com
+```
+
+```
+~# cat oos.txt
+*.customer.cloudways.com
+css-tricks.com
+```
+
+```
+~# cat oos.txt | anot scope.txt
+cloudways.com
+api.cloudways.com
+www.cloudways.com
+```
+
+## Special features: wildcards
+
+- `*.example.com` will remove `test.example.com` and `sub.test.example.com` but not `example.com`
+
+## Special feature: IPs and ranges
+
+- IP addresses will also be deleted, not only domains.
+- 10.0.0.1/8 will delete any IP addresses on that range
+
+## Output: 
+Target file will be updated.
+Filtered scope as stdout. 
+
+## Flags
+
+- To view the output in stdout, but not append to the file, use the dry-run option `-d`.
+- To append to the file, but not print anything to stdout, use quiet mode `-q`.
+
+## Install
+
+You can either install using go:
+
+```
+
+```
+
