@@ -18,6 +18,9 @@ Tool inspired by [anew](https://github.com/tomnomnom/anew) from [@tomnomnom](htt
 ```bash
 # Remove lines from scope.txt that match patterns in oos.txt
 cat oos.txt | anot scope.txt
+
+# Alternative: using anot in the pipeline
+cat out-of-scope.txt | anot tool_unfiltered_results.txt | anew aggregate_filtered_results.txt
 ```
 
 ### Domain Wildcards
