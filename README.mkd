@@ -1,6 +1,8 @@
 # anot
 
-**A**dd **N**ot - Complementary tool to [anew](https://github.com/tomnomnom/anew) for removing lines from files. Perfect for bug bounty scope management and data filtering.
+**A**dd **N**ot - Anew but **not**. Remove lines from files, with a little bit of extra logic for you comfort. Perfect for bug bounty scope management and data filtering.
+
+Tool inspired by [anew](https://github.com/tomnomnom/anew) from [@tomnomnom](https://github.com/tomnomnom).
 
 ## 🚀 Features
 
@@ -9,7 +11,6 @@
 - **📍 IP address filtering**: Remove specific IP addresses
 - **🌍 CIDR range support**: Remove entire IP ranges with CIDR notation
 - **⚡ High performance**: Optimized for large files with pre-compiled patterns
-- **🔧 Flexible output**: Dry-run mode, quiet mode, and whitespace trimming
 
 ## 📖 Quick Examples
 
@@ -108,32 +109,6 @@ echo "10.0.0.0/8" | anot targets.txt
 echo "2001:db8::/32" | anot targets.txt
 ```
 
-## 🎯 Real-World Examples
-
-### Bug Bounty Scope Management
-```bash
-# Remove out-of-scope domains and IP ranges
-cat out-of-scope.txt | anot in-scope.txt
-
-# Dry-run to preview changes
-cat out-of-scope.txt | anot -d in-scope.txt
-
-# Silent update without output
-cat out-of-scope.txt | anot -q in-scope.txt
-```
-
-### Network Security
-```bash
-# Remove internal networks from target list
-echo -e "192.168.0.0/16\n10.0.0.0/8\n172.16.0.0/12" | anot external-targets.txt
-```
-
-### Data Cleaning
-```bash
-# Remove test domains from production list
-echo "*.test.com" | anot production-domains.txt
-```
-
 ## ⚡ Performance
 
 `anot` is optimized for large files:
@@ -143,19 +118,6 @@ echo "*.test.com" | anot production-domains.txt
 - **Efficient I/O buffering** for large files
 
 Benchmarks show processing of 20,000+ lines in under 100ms.
-
-## 🔧 Advanced Usage
-
-### Combining Multiple Pattern Types
-```bash
-# Mix exact matches, wildcards, IPs, and CIDR ranges
-cat << EOF | anot targets.txt
-*.internal.com
-192.168.1.100
-10.0.0.0/24
-staging.example.com
-EOF
-```
 
 ### Pipeline Integration
 ```bash
@@ -171,7 +133,5 @@ Contributions are welcome! Please feel free to submit issues and pull requests.
 
 This project is licensed under the MIT License.
 
-## 🙏 Acknowledgments
 
-Inspired by [anew](https://github.com/tomnomnom/anew) by [@tomnomnom](https://github.com/tomnomnom).
 
