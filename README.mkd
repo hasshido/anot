@@ -1,6 +1,6 @@
 # anot
 
-**A**dd **N**ot - Anew but **not**. Remove lines from files, with a little bit of extra logic for you comfort. Perfect for bug bounty scope management and data filtering.
+**A**dd **N**ot - Anew but **not**. Remove lines from files, with a little bit of extra logic for your comfort. Perfect for bug bounty scope management and data filtering.
 
 Tool inspired by [anew](https://github.com/tomnomnom/anew) from [@tomnomnom](https://github.com/tomnomnom).
 
